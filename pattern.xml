@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data>
+    <event>
+        <number>1</number>
+        <name>over quota</name>
+        <pattern>The email account that you tried to reach is over quota</pattern>
+    </event>
+    <event>
+        <number>2</number>
+        <name>invalid mailbox</name>
+        <pattern>invalid mailbox</pattern>
+    </event>
+</data>
