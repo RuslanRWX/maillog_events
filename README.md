@@ -1,1 +1,1 @@
-# maillog_event
+# maillog_events
