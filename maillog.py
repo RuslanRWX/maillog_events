@@ -19,19 +19,27 @@ Sleep_tile = int(config.get('main', 'sleep_time'))
 Pattern_file = config.get('main','pattern_file')
 
 
+def create_quque(number,name,email):
+    print "Num: "+number+" name:"+name+" email: "+email
+
+
+
 def find_pattern(Log_data):
     tree = ET.parse(Pattern_file)
     root = tree.getroot()
     for data in root:
-        number=data[0].text
+        number=str(data[0].text)
         name=data[1].text
         pattern=data[2].text
         #print "Search: "+pattern+" Data: "+Log_data
         string = re.search(pattern, Log_data)
+        #string =
         #string = re.match(pattern, "invalid mailbox Data")
         if string:
-            email=re.search(r'[\w\.-]+@[\w\.-]+', Log_data)
-            print email
+            emails=re.findall(r'[\w\.-]+@[\w\.-]+', Log_data)
+            #email=re.findall(r'RCPT TO:<+[\w\.-]+@[\w\.-]+>', Log_data)
+            #print "Num: "+number+" name:"+name+" email: "+email
+            create_quque(number, name, emails[1])
 
 #    print number+" "+name+" "+pattern
 
