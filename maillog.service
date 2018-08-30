@@ -1,0 +1,15 @@
+[Unit]
+Description=Simplified simple zebra service
+After=syslog.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/
+ExecStart=/usr/sbin/maillog.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
