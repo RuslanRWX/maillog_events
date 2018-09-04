@@ -1,5 +1,5 @@
 [Unit]
-Description=Simplified simple zebra service
+Description=Simplified simple maillog service
 After=syslog.target
 
 [Service]
