@@ -11,6 +11,7 @@ import re
 import boto3
 import json
 import logging.handlers
+import socket
 
 Conf_file = "/etc/maillog/maillog.conf"
 config = ConfigParser.ConfigParser()
@@ -23,6 +24,8 @@ Logs =  int(config.get('main','Logs'))
 aws_access_key_id = config.get('main','aws_access_key_id')
 aws_secret_access_key = config.get('main','aws_secret_access_key')
 region_name = config.get('main','region_name')
+hostname = socket.gethostname()
+
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
@@ -33,7 +36,7 @@ log.addHandler(handler)
 
 
 def add_to_queue(number, name, email):
-    data=json.dumps({'ID': number, 'name': name, 'email': email})
+    data=json.dumps({'ID': number, 'name': name, 'email': email, 'hostname': hostname})
     sqs = boto3.resource('sqs',
                          aws_access_key_id=aws_access_key_id,
                          aws_secret_access_key=aws_secret_access_key,
