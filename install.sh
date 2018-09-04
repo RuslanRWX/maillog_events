@@ -11,7 +11,7 @@ if [ -f /etc/redhat-release ]; then
    cp maillog.service /usr/lib/systemd/system/
 fi
 
-if [ -f /etc/lsb-release ]; then
+if [ -f /etc/debian_version  ]; then
   cp maillog.service /lib/systemd/system/
 fi
 systemctl daemon-reload
