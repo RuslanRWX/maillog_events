@@ -12,10 +12,14 @@ For Debina like system
 ```
 apt update
 apt install python-pip
+apt install git
+
 ```
+
 For Red Hat family tree
 ```
 yum install python-pip
+yun install git
 
 ```
 
