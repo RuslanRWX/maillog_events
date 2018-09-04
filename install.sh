@@ -8,7 +8,7 @@ cp maillog.py /usr/sbin/
 
 
 if [ -f /etc/redhat-release ]; then
-  
+   cp maillog.service /usr/lib/systemd/system/
 fi
 
 if [ -f /etc/lsb-release ]; then

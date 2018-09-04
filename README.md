@@ -37,6 +37,9 @@ pip install aws
 
 
 ``` 
+> Note: Sometimes, occur problems with install modules through pip. In most cases it is enough to upgrade operating system.  
+> 
+
 
 Please, configure /etc/maillog/maillog.conf before start deamon. 
 
