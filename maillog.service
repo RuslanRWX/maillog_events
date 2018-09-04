@@ -1,5 +1,5 @@
 [Unit]
-Description=Simplified simple maillog service
+Description=maillog service
 After=syslog.target
 
 [Service]
