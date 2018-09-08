@@ -15,9 +15,9 @@ pattern.xml is a xml file with patterns for pares log
 
 ---
 
-#####Please, install git and pip if you have not yet
+##### Please, install git and pip if you have not yet
 
-#####For Debian like system 
+##### For Debian like system 
 ```
 apt update
 apt install python-pip
@@ -25,14 +25,14 @@ apt install git
 
 ```
 
-#####For Red Hat family tree
+##### For Red Hat family tree
 ```
 yum install python-pip
 yum install git
 
 ```
 
-#####Get the repository and install the program  
+##### Get the repository and install the program  
 
 ```
 git clone https://github.com/ruslansvs2/maillog_events.git
