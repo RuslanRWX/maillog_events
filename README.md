@@ -15,7 +15,7 @@ pattern.xml is a xml file with patterns for pares log
 
 ---
 
-##### Please, install git and pip if you have not yet
+Please, install git and pip if you have not yet
 
 ##### For Debian like system 
 ```
