@@ -94,7 +94,7 @@ Open the file to write.
 vim /etc/maillog/pattren.xml 
 
 ```
-Just add or delete *event* block 
+Just add or delete *event* block. 
 
 ```buildoutcfg
 <?xml version="1.0"?>
@@ -112,7 +112,7 @@ Just add or delete *event* block
 </data>
 
 ```
-At the end, start the deamon 
+At the end, start the deamon. 
 
 ```buildoutcfg
 systemctl start maillog
@@ -121,7 +121,7 @@ systemctl start maillog
 
 ### How to test the deamon 
 
-For testing, you need turn on logs for daemon into the configuration file and restart it
+For testing, you need turn on logs for daemon into the configuration file and restart it.
 
 ```buildoutcfg
 sed  's/Logs: 1/Logs:\ 1/' /etc/maillog/maillog.conf 
@@ -129,7 +129,7 @@ sed  's/Logs: 1/Logs:\ 1/' /etc/maillog/maillog.conf
 systemctl restart maillog
 
 ```
-Check deamon's logs
+Check deamon's logs.
 
 ```buildoutcfg
 systemctl status  maillog
@@ -137,16 +137,16 @@ systemctl status  maillog
 journalctl -u maillog
 
 ```
-If you don't see error messages you can write data with your pattern into a mail server's log file  
+If you don't see error messages you can write data with your pattern into a mail server's log file.  
 
-Following command you write to mail's log *"over quota"* pattren
+Following command you write to mail's log *"over quota"* pattren.
 ```buildoutcfg
 
 echo '2018-07-17 04:41:15 1fdHyN-00061Y-LL == test@gmail.com R=dnslookup T=remote_smtp defer (-44): SMTP error from remote mail server after RCPT TO:<test2.gmail.com>: host alt4.gmail-smtp-in.l.google.com [127.0.0.1]: 452-4.2.2 The email account that you tried to reach is over quota. Please direct\n452-4.2.2 the recipient to\n452 4.2.2  https://support.google.com/mail/?p=OverQuotaTemp s13-v6si24815369jam.8 - gsmtp' >> /var/log/exim4/mainlog
 
 ```
 
-After a few time you can see into you syslog 
+After a few time you can see into you syslog.
 
 ```buildoutcfg
 journalctl -u maillog
@@ -155,7 +155,7 @@ Sep  9 01:01:40 mail1 maillog.add_to_queue: ID:a6519db1-2453-4152-dcb6-a83fd7a29
 
 ```
 
-If you see this message evrything is working properly. Of course, for more sure, you can check the SQS queue. Below you can see an example  
+If you see this message evrything is working properly. Of course, for more sure, you can check the SQS queue. Below you can see an example.  
 ```
 aws sqs receive-message --queue-url  https://regin.queue.amazonaws.com/00000001/email_errors   --attribute-names All --message-attribute-names All --max-number-of-messages 1
 
