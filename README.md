@@ -2,20 +2,20 @@
 
 
 *Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). 
-If your mail server sometimes bulks emailing, you will be faced with the issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should delete or disable the email addresses with errors in your database. 
+If your mail server sometimes bulks emailing, you will be faced with issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should deleted or disabled the email addresses with errors in your database. 
 
 
-*maillog* is warking as a part of serverless architecture daemon to parse mail logs and send a message to exist SQS queue.   
+*maillog* is warking as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
 The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
-*maillog.conf* is main configuration file
-*pattern.xml* is an XML file with patterns for pares log 
+*maillog.conf* is main configuration file.
+*pattern.xml* is an XML file with parse patterns. 
 
-> Note: For full architecture, you have to write a SQS consumer and email addresses handler it will be different for different project, especially handler.
+> Note: For full architecture, you have to write a SQS consumer and an email addresses handler it will be different for different project, especially handler.
 
 
 ---
 
-Please, install git and pip if you have not yet
+Please, install git and pip if you have not yet.
 
 ##### For Debian like system 
 ```
@@ -50,8 +50,9 @@ pip install aws
 > 
 
 
-Please, configure *emaillog* deamon in */etc/maillog/maillog.conf* file before start it. 
+Please, configure the *emaillog* deamon in the */etc/maillog/maillog.conf* file before start it. 
 
+Use following command or other console editor for configure it. 
 ```
 vim /etc/maillog/maillog.conf
 
@@ -62,8 +63,8 @@ vim /etc/maillog/maillog.conf
 # Path to mail log file
 mail_log_file: /var/log/exim4/mainlog
 
-# sleep time
-sleep_time: 1
+# sleep time in secund
+sleep_time: 120
 
 # Pattern file
 pattern_file: /etc/maillog/pattern.xml
@@ -88,6 +89,7 @@ Logs: 1
 ```
 Afer you sets proper data to the configuration file, you can add or delete patterns an XML file. 
 
+Open the file to write. 
 ```buildoutcfg
 vim /etc/maillog/pattren.xml 
 
@@ -108,5 +110,53 @@ Just add or delete *event* block
         <pattern>invalid mailbox</pattern>
     </event>
 </data>
+
+```
+At the end, start the deamon 
+
+```buildoutcfg
+systemctl start maillog
+
+```
+
+### How to test the deamon 
+
+For testing, you need turn on logs for daemon into the configuration file and restart it
+
+```buildoutcfg
+sed  's/Logs: 1/Logs:\ 1/' /etc/maillog/maillog.conf 
+
+systemctl restart maillog
+
+```
+Check deamon's logs
+
+```buildoutcfg
+systemctl status  maillog
+
+journalctl -u maillog
+
+```
+If you don't see error messages you can write data with your pattern into a mail server's log file  
+
+Following command you write to mail's log *"over quota"* pattren
+```buildoutcfg
+
+echo '2018-07-17 04:41:15 1fdHyN-00061Y-LL == test@gmail.com R=dnslookup T=remote_smtp defer (-44): SMTP error from remote mail server after RCPT TO:<test2.gmail.com>: host alt4.gmail-smtp-in.l.google.com [127.0.0.1]: 452-4.2.2 The email account that you tried to reach is over quota. Please direct\n452-4.2.2 the recipient to\n452 4.2.2  https://support.google.com/mail/?p=OverQuotaTemp s13-v6si24815369jam.8 - gsmtp' >> /var/log/exim4/mainlog
+
+```
+
+After a few time you can see into you syslog 
+
+```buildoutcfg
+journalctl -u maillog
+
+Sep  9 01:01:40 mail1 maillog.add_to_queue: ID:a6519db1-2453-4152-dcb6-a83fd7a29aw1 {"email": "test2@gmail.com", "hostname": "mail1.test.com", "ID": "1", "name": "over quota"}
+
+```
+
+If you see this message evrything is working properly. Of course, for more sure, you can check the SQS queue. Below you can see an example  
+```
+aws sqs receive-message --queue-url  https://regin.queue.amazonaws.com/00000001/email_errors   --attribute-names All --message-attribute-names All --max-number-of-messages 1
 
 ```
