@@ -135,7 +135,7 @@ sed  's/Logs: 0/Logs:\ 1/' /etc/maillog/maillog.conf
 systemctl restart maillog
 
 ```
-Check daemon's logs.
+Check the daemon's logs.
 
 ```buildoutcfg
 systemctl status  maillog
