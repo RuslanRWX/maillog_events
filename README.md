@@ -1,12 +1,13 @@
 ## A serverless architecture to pare and handling with mail logs
 
-- [Introduction](#Introduction)
-- [Installation](#Installation)
-- [Configuration](#Configuration)
-- [Tasting](#Testing)
+ [Introduction](#Introduction)
+ [Installation](#Installation)
+ [Configuration](#Configuration)
+ [Tasting](#Testing)
 
 
-##Introduction
+## Introduction
+
 *Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). 
 If your mail server sometimes bulks emailing, you will be faced with issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should deleted or disabled the email addresses with errors in your database. 
 
@@ -23,7 +24,8 @@ The program has two configuration file */etc/maillog/maillog.conf* and */etc/mai
 
 ---
 
-## Installation 
+## Installation
+ 
 Please, install git and pip if you have not yet.
 > Note: You should be root or have high privileges. 
 
