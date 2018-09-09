@@ -87,7 +87,7 @@ region_name: eu-west-1
 # log O or 1
 #logs sets loging messanges
 # 0 - is disabled log messages
-# 1 - is anabled log messages  
+# 1 - is enabled log messages  
 Logs: 1
 
 ```
