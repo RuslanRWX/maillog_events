@@ -1,9 +1,9 @@
 ## A serverless architecture to pare and handling with mail logs
 
-- [Introduction](##Introduction)
-- [Installation](##Installation)
-- [Configuration](##Configuration)
-- [Tasting](##Testing)
+- [Introduction](.##Introduction)
+- [Installation](.##Installation)
+- [Configuration](.##Configuration)
+- [Tasting](.##Testing)
 
 
 ## Introduction 
