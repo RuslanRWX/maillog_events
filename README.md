@@ -67,7 +67,7 @@ vim /etc/maillog/maillog.conf
 # Path to mail log file
 mail_log_file: /var/log/exim4/mainlog
 
-# sleep time in secund
+# sleep time in second
 sleep_time: 120
 
 # Pattern file
