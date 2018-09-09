@@ -43,6 +43,9 @@ pip install aws
 
 
 ./install.sh
+Please, you have to configure /etc/maillog/maillog.conf
+then run:  systemctl start maillog.service
+maillog is installed successfully
 
 
 ``` 
