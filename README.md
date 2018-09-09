@@ -5,7 +5,7 @@
 If your mail server sometimes bulks emailing, you will be faced with issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should deleted or disabled the email addresses with errors in your database. 
 
 
-*maillog* is warking as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
+*maillog* is working as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
 The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
 *maillog.conf* is main configuration file.
 *pattern.xml* is an XML file with parse patterns. 
