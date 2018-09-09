@@ -21,6 +21,7 @@ systemctl enable maillog.service
 
 
 echo "Please, you have to configure /etc/maillog/maillog.conf"
-echo "to run:  systemctl start maillog.service"
+echo "then run:  systemctl start maillog.service"
+echo "maillog is installed successfully"
 
 
