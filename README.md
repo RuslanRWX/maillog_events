@@ -56,7 +56,7 @@ maillog is installed successfully
 > 
 
 
-Please, configure the *emaillog* deamon in the */etc/maillog/maillog.conf* file before start it. 
+Please, configure the *emaillog* daemon in the */etc/maillog/maillog.conf* file before start it. 
 
 Use following command or other console editor for configure it. 
 ```
@@ -87,17 +87,17 @@ aws_secret_access_key: test
 region_name: eu-west-1
 
 # log O or 1
-#logs sets loging messanges
+#logs sets logging messanges
 # 0 - is disabled log messages
 # 1 - is enabled log messages  
 Logs: 1
 
 ```
-Afer you sets proper data to the configuration file, you can add or delete patterns an XML file. 
+After you sets proper data to the configuration file, you can add or delete patterns an XML file. 
 
 Open the file to write. 
 ```buildoutcfg
-vim /etc/maillog/pattren.xml 
+vim /etc/maillog/pattern.xml 
 
 ```
 Just add or delete *event* block. 
@@ -118,14 +118,14 @@ Just add or delete *event* block.
 </data>
 
 ```
-At the end, start the deamon. 
+At the end, start the daemon. 
 
 ```buildoutcfg
 systemctl start maillog
 
 ```
 
-### How to test the deamon 
+### How to test the daemon 
 
 For testing, you need turn on logs for daemon into the configuration file and restart it.
 
@@ -135,7 +135,7 @@ sed  's/Logs: 1/Logs:\ 1/' /etc/maillog/maillog.conf
 systemctl restart maillog
 
 ```
-Check deamon's logs.
+Check daemon's logs.
 
 ```buildoutcfg
 systemctl status  maillog
