@@ -85,7 +85,7 @@ sleep_time: 120
 pattern_file: /etc/maillog/pattern.xml
 
 # AWS
-# endpiont - only for delete message
+# endpoint - only for delete message
 endpoint_url: https://eu-west-1.queue.amazonaws.com/0000001
 #
 queue_name: email_errors
