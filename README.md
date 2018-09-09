@@ -154,7 +154,7 @@ journalctl -u maillog
 ```
 If you don't see error messages you can write data with your pattern into a mail server's log file.  
 
-Following command writes to mail's log *"over quota"* pattern.
+Following command you write to mail's log *"over quota"* pattern.
 ```buildoutcfg
 
 echo '2018-07-17 04:41:15 1fdHyN-00061Y-LL == test@gmail.com R=dnslookup T=remote_smtp defer (-44): SMTP error from remote mail server after RCPT TO:<test2.gmail.com>: host alt4.gmail-smtp-in.l.google.com [127.0.0.1]: 452-4.2.2 The email account that you tried to reach is over quota. Please direct\n452-4.2.2 the recipient to\n452 4.2.2  https://support.google.com/mail/?p=OverQuotaTemp s13-v6si24815369jam.8 - gsmtp' >> /var/log/exim4/mainlog
