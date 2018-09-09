@@ -9,6 +9,7 @@ If your mail server sometimes bulks emailing, you will be faced with issues like
 The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
 
 *maillog.conf* is main configuration file.
+
 *pattern.xml* is an XML file with parse patterns. 
 
 > Note: For full architecture, you have to write a SQS consumer and an email addresses handler it will be different for different project, especially handler.
