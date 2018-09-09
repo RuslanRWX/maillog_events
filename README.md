@@ -65,7 +65,7 @@ maillog is installed successfully
 > 
 
 ## Configuration 
-Please, configure the *emaillog* daemon in the */etc/maillog/maillog.conf* file before start it. 
+Please, configure the *maillog* daemon in the */etc/maillog/maillog.conf* file before start it. 
 
 Use following command or other console editor for configure it. 
 ```
@@ -85,7 +85,7 @@ sleep_time: 120
 pattern_file: /etc/maillog/pattern.xml
 
 # AWS
-# endpion - only for delete message
+# endpiont - only for delete message
 endpoint_url: https://eu-west-1.queue.amazonaws.com/0000001
 #
 queue_name: email_errors
@@ -154,7 +154,7 @@ journalctl -u maillog
 ```
 If you don't see error messages you can write data with your pattern into a mail server's log file.  
 
-Following command you write to mail's log *"over quota"* pattren.
+Following command you write to mail's log *"over quota"* pattern.
 ```buildoutcfg
 
 echo '2018-07-17 04:41:15 1fdHyN-00061Y-LL == test@gmail.com R=dnslookup T=remote_smtp defer (-44): SMTP error from remote mail server after RCPT TO:<test2.gmail.com>: host alt4.gmail-smtp-in.l.google.com [127.0.0.1]: 452-4.2.2 The email account that you tried to reach is over quota. Please direct\n452-4.2.2 the recipient to\n452 4.2.2  https://support.google.com/mail/?p=OverQuotaTemp s13-v6si24815369jam.8 - gsmtp' >> /var/log/exim4/mainlog
@@ -170,7 +170,7 @@ Sep  9 01:01:40 mail1 maillog.add_to_queue: ID:a6519db1-2453-4152-dcb6-a83fd7a29
 
 ```
 
-If you see this message evrything is working properly. Of course, for more sure, you can check the SQS queue. Below you can see an example.  
+If you see this message everything is working properly. Of course, for more sure, you can check the SQS queue. Below you can see an example.  
 ```
 aws sqs receive-message --queue-url  https://regin.queue.amazonaws.com/00000001/email_errors   --attribute-names All --message-attribute-names All --max-number-of-messages 1
 
