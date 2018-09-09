@@ -7,6 +7,7 @@ If your mail server sometimes bulks emailing, you will be faced with issues like
 
 *maillog* is working as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
 The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
+
 *maillog.conf* is main configuration file.
 *pattern.xml* is an XML file with parse patterns. 
 
