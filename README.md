@@ -1,17 +1,10 @@
-# Maillog_events
+# Maillog_events 
 
 # Introduction 
 *Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). 
 If your mail server sometimes bulks emailing, you will be faced with issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should deleted or disabled the email addresses with errors in your database. 
 
 
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
 
 *maillog* is working as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
 The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
@@ -25,6 +18,7 @@ The program has two configuration file */etc/maillog/maillog.conf* and */etc/mai
 
 ---
 
+# Installation 
 Please, install git and pip if you have not yet.
 > Note: You should be root or have high privileges. 
 
@@ -63,7 +57,7 @@ maillog is installed successfully
 > Note: Sometimes, occur problems with install modules through pip. In most cases, it is enough to upgrade an operating system.  
 > 
 
-
+# Configuration 
 Please, configure the *emaillog* daemon in the */etc/maillog/maillog.conf* file before start it. 
 
 Use following command or other console editor for configure it. 
@@ -132,8 +126,8 @@ At the end, start the daemon.
 systemctl start maillog
 
 ```
-
-### How to test the daemon 
+# Tasting
+ 
 
 For testing, you need turn on logs for daemon into the configuration file and restart it.
 
