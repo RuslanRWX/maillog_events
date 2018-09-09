@@ -1,4 +1,4 @@
-# Maillog_events 
+# A serverless architecture to pare and handling with mail logs
 
 # Introduction 
 *Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). 
