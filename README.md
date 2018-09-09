@@ -130,7 +130,7 @@ systemctl start maillog
 For testing, you need turn on logs for daemon into the configuration file and restart it.
 
 ```buildoutcfg
-sed  's/Logs: 1/Logs:\ 1/' /etc/maillog/maillog.conf 
+sed  's/Logs: 0/Logs:\ 1/' /etc/maillog/maillog.conf 
 
 systemctl restart maillog
 
