@@ -21,7 +21,6 @@ The program has two configuration file */etc/maillog/maillog.conf* and */etc/mai
 
 > Note: For full architecture, you have to write a SQS consumer and an email addresses handler it will be different for different project, especially handler.
 
-
 ---
 
 ## Installation
