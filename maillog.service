@@ -6,6 +6,7 @@ After=syslog.target
 Type=simple
 User=root
 Group=root
+Restart=always
 WorkingDirectory=/root/
 ExecStart=/usr/sbin/maillog.py
 StandardOutput=syslog
