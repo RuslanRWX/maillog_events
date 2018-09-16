@@ -8,8 +8,7 @@
 
 ## Introduction
 
-*Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). 
-If your mail server bulk emailing, you will be faced with issues like *"550 Message was not accepted -- invalid mailbox"*,  *"451  user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get to a blacklist about that. You should deleted or disabled the email addresses with errors in your database. 
+*Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). If your mail server sends email in bulk, you will fase issues like *"550 Message was not accepted -- invalid mailbox","451 user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get blacklisted for that. You should delete or disable the email addresses with errors in your database.
 
 
 
@@ -133,7 +132,7 @@ At the end, start the daemon.
 systemctl start maillog
 
 ```
-## Tasting
+## Testing
  
 
 For testing, you need turn on logs for daemon into the configuration file and restart it.
