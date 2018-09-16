@@ -10,22 +10,19 @@
 
 *Maillog_events* is designed to reveal email addresses by patterns and send to SQS (Amazon Simple Queue Service). If your mail server sends email in bulk, you will fase issues like *"550 Message was not accepted -- invalid mailbox","451 user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get blacklisted for that. You should delete or disable the email addresses with errors in your database.
 
+*maillog* works as a part of serverless architecture daemon to parse mail logs and sends messages to SQS queue.
 
-
-*maillog* is working as a part of serverless architecture daemon to parse mail logs and send a message to SQS queue.   
-The program has two configuration file */etc/maillog/maillog.conf* and */etc/maillog/pattern.xml* 
-
+The program has two configuration files: /etc/maillog/maillog.conf and /etc/maillog/pattern.xml
  - *maillog.conf* is main configuration file.
  - *pattern.xml* is an XML file with parse patterns. 
 
-> Note: For full architecture, you have to write a SQS consumer and an email addresses handler it will be different for different project, especially handler.
-
+> Note: For full architecture, you have to write a SQS consumer and an email addresses handler. They are not included into the tool.
 
 ---
 
 ## Installation
  
-Please, install git and pip if you have not yet.
+Please, install [GIT](#https://git-scm.com/) and [PIP](#https://pypi.org/project/pip/) if you have not yet.
 > Note: You should be root or have high privileges. 
 
 ##### For Debian like system 
