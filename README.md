@@ -28,7 +28,7 @@ The program has two configuration files: /etc/maillog/maillog.conf and /etc/mail
 Please, install [GIT](https://git-scm.com/) and [PIP](https://pypi.org/project/pip/) if you have not yet.
 > Note: You should be root or have high privileges. 
 
-##### For Debian-based distributions: 
+##### For [Debian-based](https://www.debian.org/) distributions: 
 ```
 apt update
 apt install python-pip
@@ -36,7 +36,7 @@ apt install git
 
 ```
 
-##### For Red Hat family tree:
+##### For [Red Hat](https://www.redhat.com) family tree:
 ```
 yum install python-pip
 yum install git
