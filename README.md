@@ -11,7 +11,7 @@
 *Maillog_events* is a producer that designed to reveal email addresses by patterns and send to [SQS](https://aws.amazon.com/sqs/) (Amazon Simple Queue Service). If your mail server sends email in bulk, you will fase issues like *"550 Message was not accepted -- invalid mailbox","451 user over quota"* etc. It is not proper to send mail with an invalid mailbox, for example. You can get blacklisted for that. You should delete or disable the email addresses with errors in your database.
 
 architecture
-![alt text](#mail_events_produser.jpg)
+![alt text](#https://raw.githubusercontent.com/ruslansvs2/maillog_events/master/mail_events_produser.jpg)
 
 *maillog* works as a part of serverless architecture daemon to parse mail logs and sends messages to [SQS](https://aws.amazon.com/sqs/) queue.
 
