@@ -22,7 +22,7 @@ The program has two configuration files: /etc/maillog/maillog.conf and /etc/mail
 
 ## Installation
  
-Please, install [GIT](#https://git-scm.com/) and [PIP](#https://pypi.org/project/pip/) if you have not yet.
+Please, install [GIT](https://git-scm.com/) and [PIP](https://pypi.org/project/pip/) if you have not yet.
 > Note: You should be root or have high privileges. 
 
 ##### For Debian like system 
