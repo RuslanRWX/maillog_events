@@ -20,12 +20,13 @@ The program has two configuration files: /etc/maillog/maillog.conf and /etc/mail
 
 ---
 
-## Installation
+## 1. Installation
  
 Please, install [GIT](https://git-scm.com/) and [PIP](https://pypi.org/project/pip/) if you have not yet.
 > Note: You should be root or have high privileges. 
 
-##### For Debian like system 
+### 1.1
+##### For Debian-based distributions: 
 ```
 apt update
 apt install python-pip
@@ -33,14 +34,14 @@ apt install git
 
 ```
 
-##### For Red Hat family tree
+##### For Red Hat family tree:
 ```
 yum install python-pip
 yum install git
 
 ```
 
-##### Get the repository and install the program  
+##### 1.2 Get the repository and install the program:
 
 ```
 git clone https://github.com/ruslansvs2/maillog_events.git
@@ -51,17 +52,19 @@ pip install aws
 
 
 ./install.sh
-Please, you have to configure /etc/maillog/maillog.conf
-then run:  systemctl start maillog.service
 maillog is installed successfully
+Configure /etc/maillog/maillog.conf
+then run:  systemctl start maillog.service
 
 
 ``` 
 > Note: Sometimes, occur problems with install modules through pip. In most cases, it is enough to upgrade an operating system.  
 > 
 
-## Configuration 
-Please, configure the *maillog* daemon in the */etc/maillog/maillog.conf* file before start it. 
+## 2. Configuration 
+
+2.1
+Configure the *maillog* daemon in the */etc/maillog/maillog.conf* file before starting it.
 
 Use following command or other console editor for configure it. 
 ```
