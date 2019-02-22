@@ -60,8 +60,8 @@ def find_pattern(log_data):
         string = re.search(pattern, log_data)
 
         if string:
-            emails=re.findall(r'[\w\.-]+@[\w\.-]+', log_data)
-            add_to_queue(number, name, emails[1])
+            emails=re.findall(r'[TO:\w\.-]+@[\w\.-]+', log_data)
+            add_to_queue(number, name, emails[0])
 
 
 def main():
