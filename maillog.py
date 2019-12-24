@@ -1,6 +1,6 @@
 #!/usr/bin/python
-# version 0.0.1
-# Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
+# version 0.0.2
+# Copyright (c) 2018 Ruslan Variushkin,  ruslansvs2@yandex.ua
 
 import ConfigParser
 import time
