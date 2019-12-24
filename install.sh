@@ -19,5 +19,6 @@ echo "maillog is installed successfully"
 echo "Configure /etc/maillog/maillog.conf"
 echo "then run:  systemctl start maillog.service"
 
+exit 0
 
 
