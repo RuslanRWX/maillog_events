@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 mkdir /etc/maillog/
 cp maillog.conf /etc/maillog/
 cp pattern.xml /etc/maillog/
@@ -16,8 +15,6 @@ if [ -f /etc/debian_version  ]; then
 fi
 systemctl daemon-reload
 systemctl enable maillog.service
-
-
 
 echo "maillog is installed successfully"
 echo "Configure /etc/maillog/maillog.conf"
