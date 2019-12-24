@@ -5,7 +5,6 @@ cp maillog.conf /etc/maillog/
 cp pattern.xml /etc/maillog/
 cp maillog.py /usr/sbin/
 
-
 if [ -f /etc/redhat-release ]; then
    cp maillog.service /usr/lib/systemd/system/
 fi
