@@ -58,6 +58,7 @@ def find_pattern(log_data):
         name=data[1].text
         pattern=data[2].text
         string = re.search(pattern, log_data)
+
         if string:
             emails=re.findall(r'[TO:\w\.-]+@[\w\.-]+', log_data)
             if not emails:
